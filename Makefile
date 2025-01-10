@@ -1,24 +1,24 @@
 install:
-	poetry install
+	uv install
 
 test:
-	poetry run pytest
+	uv run pytest
 
 test-coverage:
-	poetry run pytest --cov=hexlet_python_package --cov-report xml
+	uv run pytest --cov=hexlet_python_package --cov-report xml
 
 gendiff:
-	poetry run gendiff
+	uv run gendiff
 
 lint:
-	poetry run flake8
+	uv run flake8
 
 selfcheck:
-	poetry check
+	uv check
 
 check: selfcheck test lint
 
 build: check
-	poetry build
+	uv build
 
 .PHONY: install test lint selfcheck check build
