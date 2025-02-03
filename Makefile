@@ -10,8 +10,14 @@ test-coverage:
 gendiff:
 	uv run gendiff
 
+package-install:
+	uv -m pip install --user dist/*.whl
+
+package-reinstall:
+	uv -m pip install --force-reinstall --user dist/*whl
+
 lint:
-	uv run flake8
+	uv run ruff check
 
 selfcheck:
 	uv check

@@ -4,6 +4,7 @@ from gendiff.formatters.stylish import stylish
 from gendiff.formatters.plain import plain
 from gendiff.formatters.json import json_formatter
 
+
 def generate_diff(path_file1, path_file2, format_name='stylish'):
     file1 = parser(path_file1)
     file2 = parser(path_file2)
@@ -17,3 +18,6 @@ def generate_diff(path_file1, path_file2, format_name='stylish'):
             return json_formatter(diff)
         case _:
             return "Wrong format"
+
+
+generate_diff('tests\fixtures\file1.json', 'tests\fixtures\file1.json', json)
