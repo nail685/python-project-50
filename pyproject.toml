@@ -2,7 +2,7 @@
 authors = [
     {name = "Nail", email = "nn@io.org"},
 ]
-requires-python = "<4.0,>=3.10"
+requires-python = "<4.0,>=3.12"
 name = "hexlet-code"
 version = "0.1.0"
 description = "find differences between two files"

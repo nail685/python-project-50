@@ -1,4 +1,5 @@
-# from gendiff.parser import parser
+from gendiff.parser import parser
+
 
 def build_diff(tree1, tree2):
     diff = {}
@@ -16,7 +17,7 @@ def build_diff(tree1, tree2):
             diff[node] = ('changed', tree1[node], tree2[node])
     return dict(sorted(diff.items()))
 
-# q = parser('F:/Hexlet-Git/Gendiff/tests/fixtures/file1_tree.json')
-# w = parser('F:/Hexlet-Git/Gendiff/tests/fixtures/file2_tree.json')
-# e = build_diff(q, w)
-# print(e)
+q = parser('F:/Hexlet-Git/Gendiff/tests/fixtures/file1_tree.json')
+w = parser('F:/Hexlet-Git/Gendiff/tests/fixtures/file2_tree.json')
+e = build_diff(q, w)
+print(e)

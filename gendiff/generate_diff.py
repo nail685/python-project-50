@@ -20,4 +20,4 @@ def generate_diff(path_file1, path_file2, format_name='stylish'):
             return "Wrong format"
 
 
-generate_diff('tests\fixtures\file1.json', 'tests\fixtures\file1.json', json)
+generate_diff('tests\fixtures\file1.json', 'tests\fixtures\file1.json', 'json')
