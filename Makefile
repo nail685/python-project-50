@@ -11,20 +11,17 @@ gendiff:
 	uv run gendiff
 
 package-install:
-	uv -m pip install --user dist/*.whl
+	uv pip install dist\hexlet_code-0.1.0-py3-none-any.whl
 
 package-reinstall:
-	uv -m pip install --force-reinstall --user dist/*whl
+	uv pip install --force-reinstall dist\hexlet_code-0.1.0-py3-none-any.whl
 
 lint:
 	uv run ruff check
 
-selfcheck:
-	uv check
+check: test lint
 
-check: selfcheck test lint
-
-build: check
+build:
 	uv build
 
-.PHONY: install test lint selfcheck check build
+.PHONY: all test clean

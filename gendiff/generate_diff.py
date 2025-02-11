@@ -1,8 +1,8 @@
-from gendiff.parser import parser
 from gendiff.build_diff import build_diff
-from gendiff.formatters.stylish import stylish
-from gendiff.formatters.plain import plain
 from gendiff.formatters.json import json_formatter
+from gendiff.formatters.plain import plain
+from gendiff.formatters.stylish import stylish
+from gendiff.parser import parser
 
 
 def generate_diff(path_file1, path_file2, format_name='stylish'):
@@ -20,4 +20,5 @@ def generate_diff(path_file1, path_file2, format_name='stylish'):
             return "Wrong format"
 
 
-generate_diff('tests\fixtures\file1.json', 'tests\fixtures\file1.json', 'json')
+# generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json', 'plan')
+# generate_diff('tests/fixtures/file1_tree.json', 'tests/fixtures/file2_tree.json', 'plan')
