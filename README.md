@@ -48,27 +48,26 @@ plain - shows differences in following format 'Property 'common.follow' was adde
 json - showa differences in json
 
 ## Dependencies:
-python = "^3.10"
+python = "^3.12"
 pyyaml = "^6.0.2"
 
 
-How it works:
+Example of work:
 With .json files without nested structures
-
-
+[![asciicast](https://asciinema.org/a/txSJhcvVaZhwdfWgajBPHU8mj.svg)](https://asciinema.org/a/txSJhcvVaZhwdfWgajBPHU8mj)
 
 With .yaml files without nested structures
+[![asciicast](https://asciinema.org/a/BAY3gXqsxyrydGrJUfGHgLffF.svg)](https://asciinema.org/a/BAY3gXqsxyrydGrJUfGHgLffF)
 
-
+With nested structures
 
 Stylish formatter
-
+[![asciicast](https://asciinema.org/a/MwWJoRlwI6oKysfFsXOOGdDM2.svg)](https://asciinema.org/a/MwWJoRlwI6oKysfFsXOOGdDM2)
 
 
 Plain formatter
-
+[![asciicast](https://asciinema.org/a/SOfEZLwOCnHa7VcOqJFQTgacF.svg)](https://asciinema.org/a/SOfEZLwOCnHa7VcOqJFQTgacF)
 
 
 JSON formatter
-
-
+[![asciicast](https://asciinema.org/a/j5Twx6B02KGwKTcrAhG6dc8fg.svg)](https://asciinema.org/a/j5Twx6B02KGwKTcrAhG6dc8fg)
