@@ -12,13 +12,9 @@ def generate_diff(path_file1, path_file2, format_name='stylish'):
     match format_name:
         case 'stylish':
             return stylish(diff)
-        case 'plan':
+        case 'plain':
             return plain(diff)
         case 'json':
             return json_formatter(diff)
         case _:
             return "Wrong format"
-
-
-# generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json', 'plan')
-# generate_diff('tests/fixtures/file1_tree.json', 'tests/fixtures/file2_tree.json', 'plan')

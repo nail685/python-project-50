@@ -1,44 +1,38 @@
-def find_path(tree, target, path=[]):
-    if not isinstance(tree, dict) or not tree:
-        return None
-    for key, subtree in tree.items():
-        if key == target:
-            return ".".join(path + [key])
-        sub_path = find_path(subtree, target, path + [key])
-        if sub_path:
-            return sub_path
-    return None 
-
-
-def norm(data):
-    return str(data).lower()
-
-
 def plain(data_dict):
-    for node in data_dict:
-        path_node = find_path(data_dict, node)
-        if data_dict[node][0] == 'nested' and isinstance(data_dict[node][1], dict):
-            plain(data_dict[node][1])
-        elif data_dict[node][0] == 'added':
-            if isinstance(data_dict[node][1], dict):
-                # path = find_path(data_dict, node)
-                print(f"Property '{path_node}' was added with value: "
-                      f"[complex value]")
-            else:
-                # path = find_path(data_dict, node)
-                print(f"Property '{path_node}' was added with value: "
-                      f"'{norm(data_dict[node][1])}'")
-        elif data_dict[node][0] == 'removed':
-            # path = find_path(data_dict, node)
-            print(f"Property '{path_node}' was removed")
-        elif data_dict[node][0] == 'changed' and len(data_dict[node]) == 3:
-            if isinstance(data_dict[node][1], dict):
-                # path = find_path(data_dict, node)
-                print(f"Property '{path_node}' was updated. From "
-                      f"'[complex value] to {norm(data_dict[node][2])}'")
-            else:
-                # path = find_path(data_dict, node)
-                print(f"Property '{path_node}' was updated. From "
-                      f"'{norm(data_dict[node][1])}' to "
-                      f"'{norm(data_dict[node][2])}'")
+    result = reform_data(data_dict)
+    return result
+    
+    
+def reform_data(data_dict, path=''):
+    lines = []
+    sorted_data = sorted(data_dict.items())
+    for key, (node_type, *value) in sorted_data:
+        item = f'{path}{key}'
+        formated_value = format_value(value[0])
+        if node_type == 'added':
+            lines.append(f"Property '{item}'"
+                         f" was added with value: {formated_value}")
+        elif node_type == 'removed':
+            lines.append(f"Property '{item}' was removed")
+        elif node_type == 'changed':
+            old_value, new_value = value
+            lines.append(f"Property '{item}' was updated."
+                         f" From {format_value(old_value)}"
+                         f" to {format_value(new_value)}")
+        elif node_type == 'nested':
+            nested_value = reform_data(value[0], f'{item}.')
+            lines.append(nested_value)
+    return '\n'.join(lines)
 
+
+def format_value(value):
+    if isinstance(value, dict):
+        return '[complex value]'
+    elif isinstance(value, bool):
+        return str(value).lower()
+    elif value is None:
+        return 'null'
+    elif isinstance(value, str):
+        return f"'{value}'"
+    elif isinstance(value, int):
+        return str(value)
