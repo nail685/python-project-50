@@ -17,4 +17,4 @@ def generate_diff(path_file1, path_file2, format_name='stylish'):
         case 'json':
             return json_formatter(diff)
         case _:
-            return "Wrong format"
+            return stylish(diff)
