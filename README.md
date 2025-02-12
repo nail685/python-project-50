@@ -52,14 +52,14 @@ python = "^3.12"
 pyyaml = "^6.0.2"
 
 
-Example of work:
+## Example of work:
 With .json files without nested structures
 [![asciicast](https://asciinema.org/a/txSJhcvVaZhwdfWgajBPHU8mj.svg)](https://asciinema.org/a/txSJhcvVaZhwdfWgajBPHU8mj)
 
 With .yaml files without nested structures
 [![asciicast](https://asciinema.org/a/BAY3gXqsxyrydGrJUfGHgLffF.svg)](https://asciinema.org/a/BAY3gXqsxyrydGrJUfGHgLffF)
 
-With nested structures
+#### With nested structures
 
 Stylish formatter
 [![asciicast](https://asciinema.org/a/MwWJoRlwI6oKysfFsXOOGdDM2.svg)](https://asciinema.org/a/MwWJoRlwI6oKysfFsXOOGdDM2)
